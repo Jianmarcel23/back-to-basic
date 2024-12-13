@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Marcel">
+        <meta name="description " content="This is a simple web page that contains everything I learned while learning HTML.">
+        <title>My first web page</title>
+        <link rel="icon" href="HTML.png" type="image/x-icon">
+        <link rel="stylesheet" href="main.css" type="text/css"> 
+    </head>
+    <body>
+        <header>
+        <h1>2025 goals</h1>
+        </header>
+    <hr>
+
+        <nav>
+            <ul>
+                <li><a href="#html">learning HTML</a></li>
+                <li><a href="#vacay"> vacation list</a></li>
+            </ul>
+        </nav>
+        
+        <section id="html">
+        <h2>im ready to learn HTMl</h2>
+        <p>this is my first web page.</p> 
+
+        <h3>My Daily Schedule</h3>
+        <p>Let me tell you how: </p> 
+
+            <ol>
+
+            <li>i learn <abbr title="Hypertext Markup Language"><a href="https://www.dicoding.com/blog/panduan-lengkap-belajar-coding-html-untuk-pemula/">HTML</a></abbr> from internet.</li>
+            <li>i practice HTML by creating web pages.</li>
+            <li>i learn HTML by watching tutorials.</li>
+            <li><strong>i getting a car next year</strong></li>
+
+            </ol>
+        </section>
+        <hr>
+        <section id="vacay">
+            <h2>I Am Also Planning a Vacation</h2>
+            <p>I want to visit Japan by December 2025.</p>
+    
+            <h3>Places in Japan I Would Like to Visit</h3>
+    
+            <!-- Tokyo Slideshow -->
+            <h4 class="center-text">TOKYO</h4>
+            <div class="slideshow-container">
+                <div class="mySlides1 fade">
+                    <img src="img/tokyo.jpg" width="500" height="200">
+                </div>
+                <div class="mySlides1 fade">
+                    <img src="img/tokyo02.jpeg" width="500" height="200">
+                </div>
+                <div class="mySlides1 fade">
+                    <img src="img/tokyo03.jpeg" width="500" height="200">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+            </div>
+            <div style="text-align: center;">
+                <span class="dot dot1" onclick="currentSlide(1, 0)"></span>
+                <span class="dot dot1" onclick="currentSlide(2, 0)"></span>
+                <span class="dot dot1" onclick="currentSlide(3, 0)"></span>
+            </div>
+    
+            <!-- Okinawa Slideshow -->
+            <h4 class="center-text">OKINAWA</h4>
+            <div class="slideshow-container">
+                <div class="mySlides2 fade">
+                    <img src="img/okinawa.webp" width="500" height="200">
+                </div>
+                <div class="mySlides2 fade">
+                    <img src="img/okinawaa.jpeg" width="500" height="200">
+                </div>
+                <div class="mySlides2 fade">
+                    <img src="img/okinawaTown.jpeg" width="500" height="200">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+            </div>
+            <div style="text-align: center;">
+                <span class="dot dot2" onclick="currentSlide(1, 1)"></span>
+                <span class="dot dot2" onclick="currentSlide(2, 1)"></span>
+                <span class="dot dot2" onclick="currentSlide(3, 1)"></span>
+            </div>
+        </section>
+    </hr>
+    <hr>
+        <footer>
+            &copy; <a href="about.html">Marcel</a>
+            <p><a href="#">Back to Top</a></p>
+        </footer>
+    <hr>
+        <script>
+            let slideIndex = [1, 1];
+            let slideId = ["mySlides1", "mySlides2"];
+    
+            // Initialize slides
+            showSlides(1, 0);
+            showSlides(1, 1);
+    
+            // Next/previous controls
+            function plusSlides(n, no) {
+                showSlides(slideIndex[no] += n, no);
+            }
+    
+            // Dot controls
+            function currentSlide(n, no) {
+                showSlides(slideIndex[no] = n, no);
+            }
+    
+            function showSlides(n, no) {
+                let i;
+                let slides = document.getElementsByClassName(slideId[no]);
+                let dots = document.getElementsByClassName("dot" + (no + 1));
+    
+                if (n > slides.length) { slideIndex[no] = 1; }
+                if (n < 1) { slideIndex[no] = slides.length; }
+    
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+    
+                slides[slideIndex[no] - 1].style.display = "block";
+                dots[slideIndex[no] - 1].className += " active";
+            }
+
+            setInterval(() => plusSlides(1, 0), 3000); // Tokyo autoplay
+setInterval(() => plusSlides(1, 1), 3000); // Okinawa autoplay
+
+        </script>
+    </body>
+    </html>

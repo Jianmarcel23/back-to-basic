@@ -1,0 +1,99 @@
+html {
+    font-size: 22px;
+}
+body {
+    background-color: #f2f2f2;
+    color: darkblue;
+}
+
+a {
+    color: aqua;
+}
+
+a:view-transition {
+    color: chartreuse;
+}
+a:hover, a:active {
+
+    color: khaki;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 500px; /* Batas lebar maksimum */
+    margin: auto; /* Pusatkan kontainer */
+    overflow: hidden;
+    border: 2px solid #ccc; /* Tambahkan border agar rapi */
+    border-radius: 10px; /* Rounding edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+/* Gambar dalam slide */
+.slideshow-container img {
+    display: block;
+    max-width: 100%; /* Sesuaikan dengan kontainer */
+    height: auto; /* Jaga rasio aspek */
+}
+
+/* Fade effect */
+.fade {
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+
+/* Navigation buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+.center-text {
+    text-align: center; /* Memusatkan teks secara horizontal */
+    font-size: 20px; /* Ukuran teks */
+    margin-bottom: 10px; /* Jarak antara teks dan slideshow */
+    font-weight: bold; /* Membuat teks lebih tebal */
+    color: #333; /* Warna teks */
+}
+
