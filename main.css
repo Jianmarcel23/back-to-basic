@@ -1,82 +1,126 @@
-html {
-    font-size: 22px;
-}
+/* Background Halaman Utama */
 body {
-    background-color: #f2f2f2;
-    color: darkblue;
+    background-color: #f9f9f9; /* Warna abu-abu terang yang netral */
+    color: #333333; /* Warna teks abu-abu tua */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-a {
-    color: aqua;
+/* Header Modern */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2c3e50; /* Biru Navy Modern */
+    color: #ffffff; /* Teks putih agar kontras */
+    padding: 20px;
+    width: 100%;
+}
+header p {
+    font-size: 18px; /* Ukuran font lebih kecil */
+    color: #f1f1f1; /* Warna abu-abu terang agar lembut */
+    text-align: center; /* Teks rata tengah */
+    line-height: 1.6; /* Jarak antar baris */
+    margin: 10px 0 0; /* Jarak atas dan bawah */
+    max-width: 600px; /* Lebar maksimum agar teks lebih rapi */
 }
 
-a:view-transition {
-    color: chartreuse;
-}
-a:hover, a:active {
 
-    color: khaki;
+header h1, header nav a {
+    color: #ffffff; /* Warna teks putih */
 }
 
-/* Slideshow container */
+nav ul li a {
+    color: white; /* Warna link lebih lembut */
+}
+
+nav ul li a:hover {
+    color: #00bcd4; /* Efek hover biru terang */
+    text-decoration: underline;
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.social-links img {
+    width: 40px; /* Ukuran lebih proporsional */
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow lebih modern */
+    transition: all 0.3s ease-in-out; /* Animasi untuk hover */
+    border: 2px solid transparent; /* Border default */
+}
+
+.social-links img:hover {
+    transform: scale(1.2); /* Efek perbesar halus */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Shadow saat hover */
+    border: 2px solid #4CAF50; /* Warna hijau modern untuk border saat hover */
+}
+
+/* Hover Icon Footer */
+footer .social-links img:hover {
+    border: 2px solid #FFC107; /* Warna emas untuk hover footer */
+}
+
+
+/* Section Modern */
+section {
+    background-color: #ffffff; /* Background putih untuk kesan bersih */
+    border: 1px solid #e0e0e0; /* Border abu-abu lembut */
+    border-radius: 8px;
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow lembut */
+    width: 90%;
+    max-width: 1200px; /* Membatasi lebar maksimum section */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pusatkan semua konten di dalam section */
+}
+
+section h2, section h3 {
+    color: #2c3e50; /* Biru navy gelap untuk judul */
+    margin-bottom: 10px;
+    text-align: center; /* Pastikan judul di tengah */
+}
+
+section p {
+    color: #555555; /* Warna teks abu-abu tua */
+    line-height: 1.6;
+    text-align: center; /* Pusatkan teks */
+    margin-bottom: 20px; /* Memberikan jarak antara paragraf dan judul */
+    font-size: 18px; /* Ukuran font teks */
+    max-width: 800px; /* Membatasi lebar teks */
+}
+
 .slideshow-container {
     position: relative;
-    max-width: 500px; /* Batas lebar maksimum */
-    margin: auto; /* Pusatkan kontainer */
-    overflow: hidden;
-    border: 2px solid #ccc; /* Tambahkan border agar rapi */
-    border-radius: 10px; /* Rounding edges */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    width: 100%; /* Pastikan slideshow tidak lebih lebar dari container */
+    max-width: 800px; /* Batasi lebar slideshow */
+    margin-bottom: 20px; /* Memberikan jarak setelah slideshow */
 }
 
-/* Gambar dalam slide */
 .slideshow-container img {
-    display: block;
-    max-width: 100%; /* Sesuaikan dengan kontainer */
-    height: auto; /* Jaga rasio aspek */
-}
-
-/* Fade effect */
-.fade {
-    animation: fade 1.5s;
-}
-
-@keyframes fade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
+    width: 100%;
+    height: auto; /* Menjaga agar proporsi gambar tetap sesuai */
+    object-fit: cover; /* Gambar tetap memenuhi area tanpa distorsi */
+    border-radius: 8px;
 }
 
 
-/* Navigation buttons */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    user-select: none;
-    transition: 0.3s;
+.center-text {
+    text-align: center;
 }
 
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Dots */
 .dot {
-    cursor: pointer;
     height: 15px;
     width: 15px;
     margin: 0 2px;
@@ -86,14 +130,222 @@ a:hover, a:active {
     transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.dot:hover {
     background-color: #717171;
 }
-.center-text {
-    text-align: center; /* Memusatkan teks secara horizontal */
-    font-size: 20px; /* Ukuran teks */
-    margin-bottom: 10px; /* Jarak antara teks dan slideshow */
-    font-weight: bold; /* Membuat teks lebih tebal */
-    color: #333; /* Warna teks */
+
+/* Dot aktif untuk slideshow */
+.dot1.active, .dot2.active {
+    background-color: #00bcd4;
 }
 
+h4.center-text {
+    margin-top: 20px;
+    font-size: 24px; /* Ukuran font yang lebih besar untuk judul bagian */
+    color: #2c3e50;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Section Things to Buy */
+#things-to-buy {
+    text-align: center;
+    margin: 20px auto;
+}
+
+#things-to-buy h2 {
+    color: #2c3e50;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+#things-to-buy ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#things-to-buy li {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+#things-to-buy figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#things-to-buy img {
+    width: 100%;
+    max-width: 350px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow untuk gambar */
+}
+
+#things-to-buy figcaption {
+    font-size: 16px;
+    color: #555555;
+    margin-top: 8px;
+}
+
+/* Footer Modern */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2c3e50; /* Senada dengan header */
+    color: #ffffff; /* Teks putih */
+}
+
+footer a {
+    color: #00bcd4; /* Biru terang */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+/* Media Query untuk perangkat dengan lebar layar maksimal 768px (tablet dan mobile) */
+@media only screen and (max-width: 768px) {
+    /* Header */
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    header p {
+        font-size: 16px; /* Menurunkan ukuran font di perangkat kecil */
+        margin: 5px 0;
+    }
+
+    /* Social Media Links */
+    .social-links {
+        flex-direction: row; /* Mengubah arah elemen menjadi baris */
+        gap: 10px;
+    }
+
+    .social-links img {
+        width: 30px; /* Mengubah ukuran icon sosial media */
+        height: 30px;
+    }
+
+    /* Section */
+    section {
+        padding: 20px;
+        width: 100%; /* Memastikan section tidak lebih lebar dari layar */
+        margin: 10px 0;
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+        max-width: 100%; /* Memastikan slideshow tidak terpotong */
+    }
+
+    .slideshow-container img {
+        object-fit: cover;
+        height: auto;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    footer .social-links {
+        margin-top: 10px;
+    }
+
+    /* Things to Buy Section */
+    #things-to-buy {
+        margin: 15px;
+    }
+
+    #things-to-buy li {
+        display: block; /* Menampilkan item per baris */
+        margin: 15px 0;
+    }
+
+    #things-to-buy img {
+        width: 100%; /* Gambar menyesuaikan lebar container */
+        height: auto;
+    }
+}
+
+/* Media Query untuk perangkat dengan lebar layar maksimal 480px (smartphone) */
+@media only screen and (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 24px; /* Menyesuaikan ukuran judul */
+    }
+
+    header p {
+        font-size: 14px; /* Ukuran font yang lebih kecil untuk smartphone */
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .social-links img {
+        width: 25px; /* Menyesuaikan ukuran gambar di perangkat kecil */
+        height: 25px;
+    }
+
+    section {
+        padding: 15px;
+        margin: 5px;
+    }
+
+    .slideshow-container img {
+        height: 200px; /* Menyesuaikan ukuran gambar di slideshow */
+    }
+
+    #things-to-buy {
+        margin: 10px;
+    }
+
+    #things-to-buy img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}

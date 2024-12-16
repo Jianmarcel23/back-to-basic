@@ -3,30 +3,69 @@
     <head>
         <meta charset="UTF-8">
         <meta name="author" content="Marcel">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description " content="This is a simple web page that contains everything I learned while learning HTML.">
         <title>My first web page</title>
         <link rel="icon" href="HTML.png" type="image/x-icon">
         <link rel="stylesheet" href="main.css" type="text/css"> 
     </head>
     <body>
+        <audio autoplay loop>
+            <source src="music/Future-Juice-WRLD-Hard-Work-Pays-Off-Audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                const audio = document.getElementById('myAudio');
+    
+                // Unmute audio setelah halaman sepenuhnya dimuat
+                audio.muted = false;
+    
+                // Mengatasi autoplay yang mungkin terblokir
+                const playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        console.log('Autoplay success!');
+                    }).catch(error => {
+                        console.log('Autoplay blocked, user interaction needed');
+                    });
+                }
+            });
+        </script>
         <header>
-        <h1>2025 goals</h1>
+            <img src="img/foto_professional_copy.jpg.jpg" alt="Logo" width="100" height="100">
+            <h1>MY 2025 GOALS</h1>
+            <p>My guide to achieving these dreams and making things happen! If I can't, then I'm just a loser.</p>
+            <nav>
+                <ul>
+                    <li><a href="#html">Learning HTML</a></li>
+                    <li><a href="#vacay">Vacation List</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </nav>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/jianmarcelhamonangan/" target="_blank">
+                    <img src="img/linkedin_logo.png" alt="linkedin">
+                </a>
+                <a href="https://github.com/Jianmarcel23" target="_blank">
+                    <img src="img/github_logo.png" alt="github">
+                </a>
+                <a href="mailto:jianmarcelhamonangan@gmail.com" target="_blank">
+                    <img src="img/email_logo.png" alt="email">
+                </a>
+            </div>
+            
         </header>
-    <hr>
-
-        <nav>
-            <ul>
-                <li><a href="#html">learning HTML</a></li>
-                <li><a href="#vacay"> vacation list</a></li>
-            </ul>
-        </nav>
         
+        
+        <hr>
+    
         <section id="html">
-        <h2>im ready to learn HTMl</h2>
-        <p>this is my first web page.</p> 
+            <h2>im ready to learn HTML</h2>
+            <p>this is my first web page, and im excited to start learning HTML</p> 
 
-        <h3>My Daily Schedule</h3>
-        <p>Let me tell you how: </p> 
+            <h3>My Daily Schedule</h3>
+            <p>Let me tell you how: </p> 
 
             <ol>
 
@@ -37,7 +76,7 @@
 
             </ol>
         </section>
-        <hr>
+    <hr>
         <section id="vacay">
             <h2>I Am Also Planning a Vacation</h2>
             <p>I want to visit Japan by December 2025.</p>
@@ -48,13 +87,22 @@
             <h4 class="center-text">TOKYO</h4>
             <div class="slideshow-container">
                 <div class="mySlides1 fade">
-                    <img src="img/tokyo.jpg" width="500" height="200">
+                    <figure>
+                        <img src="img/tokyo.jpg" width="500" height="200">
+                        <figcaption class="center-text">POV from tokyo tower during sunset</figcaption>
+                    </figure>
                 </div>
                 <div class="mySlides1 fade">
-                    <img src="img/tokyo02.jpeg" width="500" height="200">
+                    <figure>
+                        <img src="img/tokyo02.jpeg" width="500" height="200">
+                        <figcaption class="center-text">busy shibuya crossing</figcaption>
+                    </figure>
                 </div>
                 <div class="mySlides1 fade">
-                    <img src="img/tokyo03.jpeg" width="500" height="200">
+                    <figure>
+                        <img src="img/tokyo03.jpeg" width="500" height="200">
+                        <figcaption class="center-text">Cherry blossoms in Ueno Park</figcaption>
+                    </figure>
                 </div>
                 <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
@@ -69,13 +117,22 @@
             <h4 class="center-text">OKINAWA</h4>
             <div class="slideshow-container">
                 <div class="mySlides2 fade">
-                    <img src="img/okinawa.webp" width="500" height="200">
+                    <figure>
+                        <img src="img/okinawa.webp" width="500" height="200">
+                        <figcaption class="center-text">Beautiful beaches in Okinawa</figcaption>
+                    </figure>
                 </div>
                 <div class="mySlides2 fade">
-                    <img src="img/okinawaa.jpeg" width="500" height="200">
+                    <figure>
+                        <img src="img/okinawaa.jpeg" width="500" height="200">
+                        <figcaption class="center-text">Traditional Okinawan architecture</figcaption>
+                    </figure>
                 </div>
                 <div class="mySlides2 fade">
-                    <img src="img/okinawaTown.jpeg" width="500" height="200">
+                    <figure>
+                        <img src="img/okinawaTown.jpeg" width="500" height="200">
+                        <figcaption class="center-text">Peaceful town in Okinawa</figcaption>
+                </figure>
                 </div>
                 <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
@@ -86,7 +143,38 @@
                 <span class="dot dot2" onclick="currentSlide(3, 1)"></span>
             </div>
         </section>
-    </hr>
+    <hr>
+    <section id="things-to-buy">
+        <h2> I am also planning to buy like i said before</h2>
+        <p>it's just a things i needed</p>
+        <ul>
+            <li>
+                <h4>mobil</h4>
+                <figure>
+                    <img src="img/mobil.webp" width="380" height="291">
+                    <img src="img/mobil1.webp" width="380" height="291">
+                    <img src="img/mobil2.webp" width="380" height="291">
+                    <figcaption>
+                        <strong>mercedes-benz c200 </strong><br>
+                    harga : <span class="price"> Rp 138.000.000 </span>
+                </figcaption>
+                </figure>
+            </li>
+
+            <li>
+                <h4>motor</h4>
+                <figure>
+                    <img src="img/motor.webp" width="300" height="400">
+                    <img src="img/motor1.webp" width="300" height="400">
+                    <img src="img/motor2.webp" width="300" height="400">
+                    <figcaption>
+                        <strong>Kawasaki ZX25R</strong><br>
+                    harga : <span class="price">Rp 103.000.000</span>
+                </figcaption>
+                </figure>
+            </li>
+        </ul>
+    </section>
     <hr>
         <footer>
             &copy; <a href="about.html">Marcel</a>
