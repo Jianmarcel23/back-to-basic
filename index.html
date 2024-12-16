@@ -10,33 +10,36 @@
         <link rel="stylesheet" href="main.css" type="text/css"> 
     </head>
     <body>
-        <audio id="myAudio" autoplay loop>
+        <audio id="myAudio" autoplay loop muted>
             <source src="music/Future-Juice-WRLD-Hard-Work-Pays-Off-Audio.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>        
+        
         <script>
             window.addEventListener('DOMContentLoaded', () => {
                 const audio = document.getElementById('myAudio');
                 
-                // Pastikan elemen audio ada
+                // Ensure the audio element exists
                 if (audio) {
-                    // Unmute audio setelah halaman sepenuhnya dimuat
-                    audio.muted = false;
-            
-                    // Mengatasi autoplay yang mungkin terblokir
-                    const playPromise = audio.play();
-                    if (playPromise !== undefined) {
-                        playPromise.then(() => {
-                            console.log('Autoplay success!');
-                        }).catch(error => { 
-                            console.log('Autoplay blocked, user interaction needed');
-                        });
-                    }
+                    // Add a click event listener to the body to handle user interaction
+                    document.body.addEventListener('click', () => {
+                        // Unmute and play the audio after user interaction
+                        audio.muted = false;
+                        const playPromise = audio.play();
+                        if (playPromise !== undefined) {
+                            playPromise.then(() => {
+                                console.log('Autoplay success!');
+                            }).catch(error => { 
+                                console.log('Autoplay blocked, user interaction needed');
+                            });
+                        }
+                    });
                 } else {
                     console.log('Audio element not found');
                 }
             });
         </script>        
+
         <header>
             <img src="img/foto_professional_copy.jpg.jpg" alt="Logo" width="100" height="100">
             <h1>MY 2025 GOALS</h1>
@@ -61,7 +64,8 @@
             </div>
             
         </header>
-    
+
+        <hr>
         <hr>
     
         <section id="html">
